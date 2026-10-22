@@ -42,3 +42,5 @@ with one epic task and several subtasks.
 | Iteration 3 – Planning of system activities (Lab 3) | Set up project tracking on GitHub |
 | Iteration 4 – Software requirements specification (Lab 4) | Write the SRS of the program |
 | Iteration 5 – Testing of code (Lab 5) | Refactor the program and cover it with unit tests |
+
+Lab 3: project plan – see Milestones and Issues.
