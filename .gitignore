@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+x64/
+x86/
+Debug/
+Release/
+*.user
+*.suo
+*.obj
+*.pdb
+*.ilk
+*.exe
+
+# Program output
+results.txt
+
+# Word temporary files
+~$*
