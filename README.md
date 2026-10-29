@@ -58,17 +58,27 @@ with recorded scenarios and compares the output with the reference of the origin
 | `docs/lab3/` | Lab 3 report |
 | `tools/` | script that creates the Scrum backlog, sprints and board on GitHub |
 
-## Project plan
+## How we work: Scrum
 
-The project follows an iterative model: every laboratory work is one iteration (milestone)
-with one epic task and several subtasks.
+The work is planned with Scrum — fixed three-week sprints, each with a sprint goal and a working increment.
 
-| Milestone | Epic |
-| --- | --- |
-| Iteration 1 – Domain modelling (Lab 1) | Model the domain of Variant 3 with UML |
-| Iteration 2 – Coding of domain (Lab 2) | Implement the function table calculator in C++ |
-| Iteration 3 – Planning of system activities (Lab 3) | Set up project tracking on GitHub |
-| Iteration 4 – Software requirements specification (Lab 4) | Write the SRS of the program |
-| Iteration 5 – Testing of code (Lab 5) | Refactor the program and cover it with unit tests |
+- **Product Backlog** — [issues](https://github.com/oleksiibudkov/SE-Lab-Var3/issues) labelled `user story`:
+  “As a …, I want …, so that …”, with acceptance criteria, story points (1, 2, 3, 5, 8) and a MoSCoW priority.
+- **Sprint Backlog** — the `task` issues of the stories in the current sprint; every task is a sub-issue of its story.
+- **Sprints** — [milestones](https://github.com/oleksiibudkov/SE-Lab-Var3/milestones) with the sprint goal in the description.
+- **Scrum board** — [GitHub Project](https://github.com/users/oleksiibudkov/projects/1):
+  Product Backlog → Sprint Backlog → In Progress → Done.
 
-Lab 3: project plan – see Milestones and Issues.
+| Sprint | Dates | Sprint goal | Story points |
+| --- | --- | --- | --- |
+| Sprint 1 | 7 Sep – 25 Sep | the behaviour of the calculator is agreed and modelled in UML | 8 ✔ |
+| Sprint 2 | 28 Sep – 16 Oct | a working console calculator: input, table, saving | 18 ✔ |
+| Sprint 3 | 19 Oct – 6 Nov | the work is tracked with Scrum and the code is split into modules | 10 |
+| Sprint 4 | 9 Nov – 27 Nov | the Software Requirements Specification | 8 |
+| Sprint 5 | 30 Nov – 18 Dec | errors never crash the program, unit tests protect the results | 13 |
+
+**Definition of Done:** the acceptance criteria are met, the code builds without warnings, `make test` passes,
+the change is merged into `main` through a pull request, and the documentation is updated.
+
+The labels, sprints, stories, tasks and the board are created by
+`bash tools/github_setup.sh oleksiibudkov/SE-Lab-Var3 oleksiibudkov` (GitHub CLI).
