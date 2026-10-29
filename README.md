@@ -1,5 +1,7 @@
 # Function Table Calculator (Variant 3)
 
+"Demo line"
+
 Laboratory works of the discipline «Software Engineering», NTU “KhPI”, group KN-226e, Budkov O. Yu.
 
 The console program calculates the function
