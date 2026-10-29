@@ -1,0 +1,89 @@
+
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: not entered yet (choose 1 or 2)
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4): 
+==================================================
+  ENTER DATA FROM KEYBOARD
+==================================================
+ The table shows y for every x from the start value to the end value,
+ moving by the step. Example: start -2, end 4, step 1 gives
+ x = -2, -1, 0, 1, 2, 3, 4.
+
+ Start value of x (where the table begins, e.g. -2):  End value of x (where the table ends, not smaller than the start, e.g. 4):  Step (how much x grows in each row, greater than 0, e.g. 1):  Parameter n (the last number the formula counts up to: 1, 2, ... n; whole number from 4 to 1000, e.g. 5): 
+ Data accepted: x from 3 to 10, step 0.5, n = 1000
+
+ Press Enter to continue...
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: x from 3 to 10, step 0.5, n = 1000
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4): 
+==================================================
+  RESULT TABLE
+==================================================
+ Data: x from 3 to 10, step 0.5, n = 1000
+
+            x |                y
+ -------------+-----------------
+            3 |        too large
+          3.5 |        too large
+            4 |        too large
+          4.5 |        too large
+            5 |        too large
+          5.5 |        too large
+            6 |        too large
+          6.5 |        too large
+            7 |        too large
+          7.5 |        too large
+            8 |        too large
+          8.5 |        too large
+            9 |        too large
+          9.5 |        too large
+           10 |        too large
+
+ Do you want to save this table to the file results.txt? (y/n):   Please type y for yes or n for no.
+
+ Do you want to save this table to the file results.txt? (y/n):  Table saved to results.txt
+
+ Press Enter to continue...
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: x from 3 to 10, step 0.5, n = 1000
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4):  Goodbye!
+exit code: 0

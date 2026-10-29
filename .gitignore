@@ -16,3 +16,11 @@ results.txt
 
 # Word temporary files
 ~$*
+
+# Build output
+build/
+*.o
+*.d
+
+# macOS
+.DS_Store

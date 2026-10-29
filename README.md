@@ -11,24 +11,52 @@ y = Π (j = 1..n) Σ (i = 1..n+3) (i + 1/(4j²)),                       if x ≥
 
 for every x from the start value to the end value with the given step and prints a table of x and y.
 
-## How to run
+## Build and run
 
-- **Visual Studio:** create an empty C++ console project, add `src/main.cpp`, build and run (Ctrl + F5).
-- **g++:** `g++ -std=c++17 -o lab2 src/main.cpp`, then `./lab2`.
+| Tool | Commands |
+| --- | --- |
+| Terminal (g++ / clang++) | `make` — build, `make run` — run, `make test` — regression test |
+| Visual Studio 2019+ | **File → Open → Folder** with this repository (it reads `CMakeLists.txt`), then **Debug → Start** |
+| CMake | `cmake -S . -B build && cmake --build build`, then `./build/calculator` |
 
 Input rules: the end value is not smaller than the start value, the step is greater than 0
 (at most 1000 rows), n is a whole number from 4 to 1000. At x = 0 the program prints “not defined”.
-The file for option 2 contains four numbers: `start end step n` (example: `src/input.txt`).
+The file for option 2 contains four numbers: `start end step n` (example: `data/input.txt`).
+
+## Code structure
+
+The program is split into three layers; a layer uses only the layers below it.
+
+```
+src/
+├── main.cpp                  entry point: the main menu loop
+├── ui/                       screens
+│   └── screens.h/.cpp        main menu, result table, help
+├── io/                       input and output
+│   ├── console.h/.cpp        reading numbers, menu options, y/n answers
+│   ├── data_input.h/.cpp     data from the keyboard or from a file
+│   └── table_printer.h/.cpp  table of x and y on the screen or in a file
+└── core/                     logic without input/output
+    ├── input_data.h          InputData and the limits MAX_POINTS, MAX_N
+    ├── calculator.h/.cpp     calcY(x, n) — the function of Variant 3
+    ├── validation.h/.cpp     checks of the end value, the step and n
+    └── format.h/.cpp         numbers and data as text
+```
+
+All code is in the namespace `ftc` (Function Table Calculator). `tests/regression/` runs the program
+with recorded scenarios and compares the output with the reference of the original single-file version.
 
 ## Repository structure
 
 | Folder | Content |
 | --- | --- |
-| `src/` | C++ program (Lab 2) and an example input file |
+| `src/` | C++ program, split into modules (see above) |
+| `data/` | example input file |
+| `tests/` | regression test |
 | `docs/lab1/` | Lab 1 report, Activity and Use Case diagrams |
 | `docs/lab2/` | Lab 2 report, wireframe and screen transitions |
 | `docs/lab3/` | Lab 3 report |
-| `tools/` | script that creates labels, milestones and issues on GitHub |
+| `tools/` | script that creates the Scrum backlog, sprints and board on GitHub |
 
 ## Project plan
 

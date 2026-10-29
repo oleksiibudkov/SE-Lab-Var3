@@ -1,0 +1,81 @@
+
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: not entered yet (choose 1 or 2)
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4): 
+==================================================
+  ENTER DATA FROM KEYBOARD
+==================================================
+ The table shows y for every x from the start value to the end value,
+ moving by the step. Example: start -2, end 4, step 1 gives
+ x = -2, -1, 0, 1, 2, 3, 4.
+
+ Start value of x (where the table begins, e.g. -2):  End value of x (where the table ends, not smaller than the start, e.g. 4):  Step (how much x grows in each row, greater than 0, e.g. 1):  Parameter n (the last number the formula counts up to: 1, 2, ... n; whole number from 4 to 1000, e.g. 5): 
+ Data accepted: x from -1 to 1, step 0.25, n = 6
+
+ Press Enter to continue...
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: x from -1 to 1, step 0.25, n = 6
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4): 
+==================================================
+  RESULT TABLE
+==================================================
+ Data: x from -1 to 1, step 0.25, n = 6
+
+            x |                y
+ -------------+-----------------
+           -1 |             -0.5
+        -0.75 |          1.61849
+         -0.5 |           5.5625
+        -0.25 |          11.5352
+            0 |      not defined
+         0.25 |          40.8477
+          0.5 |          60.0625
+         0.75 |          86.3893
+            1 |            120.5
+
+ Do you want to save this table to the file results.txt? (y/n):  Table saved to results.txt
+
+ Press Enter to continue...
+==================================================
+  FUNCTION TABLE CALCULATOR (Variant 3) - MAIN MENU
+==================================================
+ This program calculates the function y(x) for every x
+ from a start value to an end value with a chosen step and shows a table:
+   y = 1/(2x) + product(i + x), i = 1..n-2                 if x < 3
+   y = product(j = 1..n) of sum(i = 1..n+3) (i + 1/(4j^2))   if x >= 3
+--------------------------------------------------
+ Current data: x from -1 to 1, step 0.25, n = 6
+--------------------------------------------------
+ 1. Enter data from keyboard  - type the start, end, step and n
+ 2. Load data from file       - read the same 4 values from a file
+ 3. Calculate and show table  - build the table of y(x), save it if needed
+ 4. Help                      - meaning of every value, rules, examples
+ 0. Exit                      - close the program
+ Choose an option (0-4):  Goodbye!
+exit code: 0
