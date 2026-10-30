@@ -1,5 +1,5 @@
 # Function Table Calculator (Variant 3)
-
+//Super Comment
 
 Laboratory works of the discipline «Software Engineering», NTU “KhPI”, group KN-226e, Budkov O. Yu.
 
