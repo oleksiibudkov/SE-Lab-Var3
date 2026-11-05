@@ -185,6 +185,7 @@ task "$U" "$S" "Choose a template for the SRS" "Product Backlog"
 task "$U" "$S" "Write the purpose, definitions and system overview" "Product Backlog"
 task "$U" "$S" "Write the overall description of the program" "Product Backlog"
 task "$U" "$S" "Write the functional and non-functional requirements" "Product Backlog"
+task "$U" "$S" "Update the repository and the issues on GitHub (Lab 4)" "Product Backlog"
 task "$U" "$S" "Prepare the report of Lab 4" "Product Backlog"
 
 # ---------------------------------------------------------------- Sprint 5 (forecast)
@@ -198,6 +199,7 @@ story "$S" "US-11" "Never crash on bad input" "a user" \
   5 Must "Product Backlog"; U=$LAST
 task "$U" "$S" "Add exception handling for wrong input and files" "Product Backlog"
 task "$U" "$S" "Show one clear message for every type of error" "Product Backlog"
+task "$U" "$S" "Fix the row limit check of the result table" "Product Backlog"
 story "$S" "US-12" "Protect the results with unit tests" "a developer" \
   "unit tests for the calculation and the input checks" \
   "a change cannot silently break the results" \
