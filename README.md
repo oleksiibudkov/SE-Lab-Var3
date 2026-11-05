@@ -57,6 +57,7 @@ with recorded scenarios and compares the output with the reference of the origin
 | `docs/lab1/` | Lab 1 report, Activity and Use Case diagrams |
 | `docs/lab2/` | Lab 2 report, wireframe and screen transitions |
 | `docs/lab3/` | Lab 3 report |
+| `docs/lab4/` | Software Requirements Specification ([SRS.md](docs/lab4/SRS.md)) and Lab 4 report |
 | `tools/` | script that creates the Scrum backlog, sprints and board on GitHub |
 
 ## How we work: Scrum
