@@ -51,13 +51,44 @@ The user enters the data from the keyboard or loads it from a file, sees the res
 
 ### 2.1 Product perspective
 
+The program is a standalone application. It is not a part of a larger system.
+
+| Interface | Description |
+| --- | --- |
+| System interfaces | none: the program works alone |
+| User interfaces | a text menu in the console, in English; the user types the number of an option and presses Enter |
+| Hardware interfaces | keyboard and screen through the console, no direct access to hardware |
+| Software interfaces | the C++ standard library and the file system of the operating system |
+| Communication interfaces | none: the program does not use a network |
+| Memory constraints | the program keeps only the current data and prints the table row by row, so the table is not stored in memory |
+
 ### 2.2 Design constraints
+
+**Operations.** The user starts the program, works in the main menu and leaves it with option 0. The end of input (Ctrl+D or Ctrl+Z) also ends the program.
+
+**Site adaptation requirements.** The program needs no installation or settings. Files are read from and written to the folder where the program runs.
+
+The code is split into the layers `core`, `io` and `ui`, and a layer uses only the layers below it. The `core` layer has no console input or output.
 
 ### 2.3 Product functions
 
+- Enter the data from the keyboard, with a check of every value.
+- Load the data from a text file.
+- Calculate y for every x and show the result table.
+- Save the result table to a file.
+- Show the main menu and the help.
+
 ### 2.4 User characteristics
 
+The users are students and teachers. They know the formula and can work with a console. They need no programming knowledge. The program explains every value and every error.
+
 ### 2.5 Constraints, assumptions and dependencies
+
+- n is a whole number from 4 to 1000.
+- The table has at most 1000 rows.
+- Numbers are typed with a dot: 0.5, not 0,5.
+- A C++17 compiler is needed to build the program.
+- The results are double precision numbers, so very big values can exceed the range of the type.
 
 ## 3. Specific requirements
 
