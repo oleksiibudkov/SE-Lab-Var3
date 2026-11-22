@@ -17,6 +17,7 @@ for every x from the start value to the end value with the given step and prints
 | Tool | Commands |
 | --- | --- |
 | Terminal (g++ / clang++) | `make` — build, `make run` — run, `make test` — regression test |
+| Unit tests (GoogleTest) | `brew install cmake googletest` once, then `./run_tests.sh` or `make unit` |
 | Visual Studio 2019+ | **File → Open → Folder** with this repository (it reads `CMakeLists.txt`), then **Debug → Start** |
 | CMake | `cmake -S . -B build && cmake --build build`, then `./build/calculator` |
 
@@ -35,17 +36,19 @@ src/
 │   └── screens.h/.cpp        main menu, result table, help
 ├── io/                       input and output
 │   ├── console.h/.cpp        reading numbers, menu options, y/n answers
-│   ├── data_input.h/.cpp     data from the keyboard or from a file
+│   ├── data_input.h/.cpp     keyboard and file screens; they catch the exceptions of core
 │   └── table_printer.h/.cpp  table of x and y on the screen or in a file
 └── core/                     logic without input/output
     ├── input_data.h          InputData and the limits MAX_POINTS, MAX_N
     ├── calculator.h/.cpp     calcY(x, n) — the function of Variant 3
-    ├── validation.h/.cpp     checks of the end value, the step and n
+    ├── validation.h/.cpp     checks and parsing of the input; they throw std::invalid_argument
+    ├── data_file.h/.cpp      loadFromFile — reads the four values from a file
     └── format.h/.cpp         numbers and data as text
 ```
 
 All code is in the namespace `ftc` (Function Table Calculator). `tests/regression/` runs the program
 with recorded scenarios and compares the output with the reference of the original single-file version.
+`tests/test_calc.cpp` has 40 unit tests (GoogleTest) for the functions of `core/`.
 
 ## Repository structure
 
@@ -53,11 +56,12 @@ with recorded scenarios and compares the output with the reference of the origin
 | --- | --- |
 | `src/` | C++ program, split into modules (see above) |
 | `data/` | example input file |
-| `tests/` | regression test |
+| `tests/` | regression test and unit tests |
 | `docs/lab1/` | Lab 1 report, Activity and Use Case diagrams |
 | `docs/lab2/` | Lab 2 report, wireframe and screen transitions |
 | `docs/lab3/` | Lab 3 report |
 | `docs/lab4/` | Software Requirements Specification ([SRS.md](docs/lab4/SRS.md)) and Lab 4 report |
+| `docs/lab5/` | output of the unit tests and Lab 5 report |
 | `tools/` | script that creates the Scrum backlog, sprints and board on GitHub |
 
 ## How we work: Scrum
