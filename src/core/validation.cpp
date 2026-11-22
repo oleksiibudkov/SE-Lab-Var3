@@ -16,11 +16,21 @@ void checkRange(double xStart, double xEnd) {
                                     + num(xStart) + ")");
 }
 
+// Кількість кроків між xStart і xEnd; 1e-9 прощає похибку ділення, напр. 0.3 / 0.1 = 2.9999999999999996
+static double stepsInRange(double xStart, double xEnd, double dx) {
+    return (xEnd - xStart) / dx + 1e-9;
+}
+
+// Рахує рядки таблиці; цей самий лічильник використовує і друк таблиці
+int countRows(double xStart, double xEnd, double dx) {
+    return static_cast<int>(std::floor(stepsInRange(xStart, xEnd, dx))) + 1;
+}
+
 // Перевіряє, що крок додатний і таблиця не буде занадто довгою
 void checkStep(double xStart, double xEnd, double dx) {
     if (dx <= 0)
         throw std::invalid_argument("the step must be greater than 0, for example 0.5 or 1");
-    if ((xEnd - xStart) / dx > MAX_POINTS)
+    if (stepsInRange(xStart, xEnd, dx) >= MAX_POINTS)  // >= 1000 кроків означає > 1000 рядків
         throw std::invalid_argument("the step is too small: the table would have more than "
                                     + std::to_string(MAX_POINTS) + " rows, so choose a bigger step");
 }

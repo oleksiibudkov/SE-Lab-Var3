@@ -10,6 +10,10 @@ namespace ftc {
 // Кінцеве значення не менше за початкове
 void checkRange(double xStart, double xEnd);
 
+// Кількість рядків таблиці: x = xStart, xStart + dx, ... до xEnd.
+// Викликати лише для даних, які пройшли checkStep
+int countRows(double xStart, double xEnd, double dx);
+
 // Крок більший за 0 і дає не більше MAX_POINTS рядків
 void checkStep(double xStart, double xEnd, double dx);
 
