@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(calculator
     src/main.cpp
     src/core/calculator.cpp
+    src/core/data_file.cpp
     src/core/format.cpp
     src/core/validation.cpp
     src/io/console.cpp

@@ -1,8 +1,15 @@
 #include "core/calculator.h"
 
+#include <cmath>
+#include <stdexcept>
+
 namespace ftc {
 
+// Обчислює y за однією з двох формул; для неможливих даних кидає виняток
 double calcY(double x, int n) {
+    if (n <= 3) throw std::invalid_argument("parameter n must be at least 4");
+    if (std::fabs(x) < 1e-9) throw std::invalid_argument("y is not defined for x = 0");
+
     // x < 3: 1/(2x) плюс добуток (i + x) для i = 1..n-2
     if (x < 3) {
         double product = 1;
