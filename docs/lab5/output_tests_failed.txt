@@ -1,0 +1,122 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/oleksiibudkov/SE-Lab-Var3/SE-Lab-Var3/build
+[ 38%] Built target core
+[ 84%] Built target calculator
+[ 92%] Building CXX object CMakeFiles/unit_tests.dir/tests/test_calc.cpp.o
+[100%] Linking CXX executable unit_tests
+[100%] Built target unit_tests
+Running main() from googletest/src/gtest_main.cc
+[==========] Running 40 tests from 6 test suites.
+[----------] Global test environment set-up.
+[----------] 10 tests from CalcY
+[ RUN      ] CalcY.x1n4_returns6_5
+/Users/oleksiibudkov/SE-Lab-Var3/SE-Lab-Var3/tests/test_calc.cpp:23: Failure
+The difference between calcY(1, 4) and 7 is 0.5, which exceeds 1e-9, where
+calcY(1, 4) evaluates to 6.5,
+7 evaluates to 7, and
+1e-9 evaluates to 1.0000000000000001e-09.
+
+[  FAILED  ] CalcY.x1n4_returns6_5 (0 ms)
+[ RUN      ] CalcY.xMinus2n4_returnsMinus0_25
+[       OK ] CalcY.xMinus2n4_returnsMinus0_25 (0 ms)
+[ RUN      ] CalcY.xMinus1n4_returnsMinus0_5
+[       OK ] CalcY.xMinus1n4_returnsMinus0_5 (0 ms)
+[ RUN      ] CalcY.x0_5n4_returns4_75
+[       OK ] CalcY.x0_5n4_returns4_75 (0 ms)
+[ RUN      ] CalcY.x2_999n4_returns20_1577
+[       OK ] CalcY.x2_999n4_returns20_1577 (0 ms)
+[ RUN      ] CalcY.x3n4_returns670491_25
+[       OK ] CalcY.x3n4_returns670491_25 (0 ms)
+[ RUN      ] CalcY.x4n4_equalsX3n4
+[       OK ] CalcY.x4n4_equalsX3n4 (0 ms)
+[ RUN      ] CalcY.x1n5_returns24_5
+[       OK ] CalcY.x1n5_returns24_5 (0 ms)
+[ RUN      ] CalcY.x0n4_throwsInvalidArgument
+[       OK ] CalcY.x0n4_throwsInvalidArgument (0 ms)
+[ RUN      ] CalcY.x1n3_throwsInvalidArgument
+[       OK ] CalcY.x1n3_throwsInvalidArgument (0 ms)
+[----------] 10 tests from CalcY (0 ms total)
+
+[----------] 4 tests from CountRows
+[ RUN      ] CountRows.m2to4step1_returns7
+[       OK ] CountRows.m2to4step1_returns7 (0 ms)
+[ RUN      ] CountRows.range999step1_returns1000
+[       OK ] CountRows.range999step1_returns1000 (0 ms)
+[ RUN      ] CountRows.range0_3step0_1_returns4
+[       OK ] CountRows.range0_3step0_1_returns4 (0 ms)
+[ RUN      ] CountRows.sameStartEndTinyStep_returns1
+[       OK ] CountRows.sameStartEndTinyStep_returns1 (0 ms)
+[----------] 4 tests from CountRows (0 ms total)
+
+[----------] 12 tests from CheckValidParams
+[ RUN      ] CheckValidParams.validData_noThrow
+[       OK ] CheckValidParams.validData_noThrow (0 ms)
+[ RUN      ] CheckValidParams.xEndLessThanXStart_throwsInvalidArgument
+[       OK ] CheckValidParams.xEndLessThanXStart_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.xEndEqualsXStart_noThrow
+[       OK ] CheckValidParams.xEndEqualsXStart_noThrow (0 ms)
+[ RUN      ] CheckValidParams.dx0_throwsInvalidArgument
+[       OK ] CheckValidParams.dx0_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.dxNegative_throwsInvalidArgument
+[       OK ] CheckValidParams.dxNegative_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.n3_throwsInvalidArgument
+[       OK ] CheckValidParams.n3_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.n4_noThrow
+[       OK ] CheckValidParams.n4_noThrow (0 ms)
+[ RUN      ] CheckValidParams.n4_5_throwsInvalidArgument
+[       OK ] CheckValidParams.n4_5_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.n1001_throwsInvalidArgument
+[       OK ] CheckValidParams.n1001_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.rows1000_noThrow
+[       OK ] CheckValidParams.rows1000_noThrow (0 ms)
+[ RUN      ] CheckValidParams.rows1001_throwsInvalidArgument
+[       OK ] CheckValidParams.rows1001_throwsInvalidArgument (0 ms)
+[ RUN      ] CheckValidParams.xEndInfinite_throwsInvalidArgument
+[       OK ] CheckValidParams.xEndInfinite_throwsInvalidArgument (0 ms)
+[----------] 12 tests from CheckValidParams (0 ms total)
+
+[----------] 5 tests from ParseDouble
+[ RUN      ] ParseDouble.text2_5_returns2_5
+[       OK ] ParseDouble.text2_5_returns2_5 (0 ms)
+[ RUN      ] ParseDouble.textAbc_throwsInvalidArgument
+[       OK ] ParseDouble.textAbc_throwsInvalidArgument (0 ms)
+[ RUN      ] ParseDouble.emptyText_throwsInvalidArgument
+[       OK ] ParseDouble.emptyText_throwsInvalidArgument (0 ms)
+[ RUN      ] ParseDouble.text2_5x_throwsInvalidArgument
+[       OK ] ParseDouble.text2_5x_throwsInvalidArgument (0 ms)
+[ RUN      ] ParseDouble.textInf_throwsInvalidArgument
+[       OK ] ParseDouble.textInf_throwsInvalidArgument (0 ms)
+[----------] 5 tests from ParseDouble (0 ms total)
+
+[----------] 4 tests from ParseInt
+[ RUN      ] ParseInt.text4_returns4
+[       OK ] ParseInt.text4_returns4 (0 ms)
+[ RUN      ] ParseInt.text4_5_throwsInvalidArgument
+[       OK ] ParseInt.text4_5_throwsInvalidArgument (0 ms)
+[ RUN      ] ParseInt.text5abc_throwsInvalidArgument
+[       OK ] ParseInt.text5abc_throwsInvalidArgument (0 ms)
+[ RUN      ] ParseInt.emptyText_throwsInvalidArgument
+[       OK ] ParseInt.emptyText_throwsInvalidArgument (0 ms)
+[----------] 4 tests from ParseInt (0 ms total)
+
+[----------] 5 tests from LoadFromFile
+[ RUN      ] LoadFromFile.validFile_loadsValues
+[       OK ] LoadFromFile.validFile_loadsValues (0 ms)
+[ RUN      ] LoadFromFile.missingFile_throwsRuntimeError
+[       OK ] LoadFromFile.missingFile_throwsRuntimeError (0 ms)
+[ RUN      ] LoadFromFile.threeValues_throwsInvalidArgument
+[       OK ] LoadFromFile.threeValues_throwsInvalidArgument (0 ms)
+[ RUN      ] LoadFromFile.fiveValues_throwsInvalidArgument
+[       OK ] LoadFromFile.fiveValues_throwsInvalidArgument (0 ms)
+[ RUN      ] LoadFromFile.wrongN_keepsOldValues
+[       OK ] LoadFromFile.wrongN_keepsOldValues (0 ms)
+[----------] 5 tests from LoadFromFile (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 40 tests from 6 test suites ran. (1 ms total)
+[  PASSED  ] 39 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CalcY.x1n4_returns6_5
+
+ 1 FAILED TEST
