@@ -208,6 +208,7 @@ story "$S" "US-12" "Protect the results with unit tests" "a developer" \
 task "$U" "$S" "Set up a unit test framework" "Product Backlog"
 task "$U" "$S" "Write unit tests for the calculation of y" "Product Backlog"
 task "$U" "$S" "Write unit tests for the input checks" "Product Backlog"
+task "$U" "$S" "Update the repository and the issues on GitHub (Lab 5)" "Product Backlog"
 task "$U" "$S" "Prepare the report of Lab 5" "Product Backlog"
 
 # ---------------------------------------------------------------- not planned yet

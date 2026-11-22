@@ -1,20 +1,32 @@
-// Перевірки вхідних даних, однакові для клавіатури і файлу.
-// Кожна функція повертає "" якщо все правильно, інакше текст помилки.
+// Перевірки і розбір вхідних даних, однакові для клавіатури і файлу.
+// Кожна перевірка нічого не повертає, якщо все правильно,
+// і кидає std::invalid_argument з текстом помилки, якщо ні.
 #pragma once
 
 #include <string>
 
-#include "core/input_data.h"
-
 namespace ftc {
 
 // Кінцеве значення не менше за початкове
-std::string checkXEnd(const InputData& d);
+void checkRange(double xStart, double xEnd);
+
+// Кількість рядків таблиці: x = xStart, xStart + dx, ... до xEnd.
+// Викликати лише для даних, які пройшли checkStep
+int countRows(double xStart, double xEnd, double dx);
 
 // Крок більший за 0 і дає не більше MAX_POINTS рядків
-std::string checkDx(const InputData& d);
+void checkStep(double xStart, double xEnd, double dx);
 
-// n ціле, від 4 до MAX_N (n зчитується як double, щоб розпізнати дробове)
-std::string checkN(double n);
+// n ціле, від 4 до MAX_N (n передається як double, щоб розпізнати дробове)
+void checkN(double n);
+
+// Усі чотири значення разом: скінченні числа, а далі checkRange, checkStep, checkN
+void checkValidParams(double xStart, double xEnd, double dx, double n);
+
+// Текст -> дійсне число; пробіли навколо дозволені. Кидає для "", "abc", "2.5x", "inf"
+double parseDouble(const std::string& text);
+
+// Текст -> ціле число; пробіли навколо дозволені. Кидає для "", "4.5", "5abc"
+int parseInt(const std::string& text);
 
 }  // namespace ftc

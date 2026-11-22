@@ -2,6 +2,7 @@
 #   make         — зібрати build/calculator
 #   make run     — зібрати і запустити в папці data/ (там лежить input.txt)
 #   make test    — регресійний тест: вивід такий самий, як у початкової програми
+#   make unit    — unit tests (GoogleTest, через CMake): ./run_tests.sh
 #   make clean   — видалити build/
 CXX      ?= g++
 CXXFLAGS ?= -std=c++17 -Wall -Wextra -pedantic -O2
@@ -25,9 +26,12 @@ run: $(BIN)
 test: $(BIN)
 	bash tests/regression/run.sh $(BIN)
 
+unit:
+	./run_tests.sh
+
 clean:
 	rm -rf build
 
-.PHONY: all run test clean
+.PHONY: all run test unit clean
 
 -include $(OBJ:.o=.d)

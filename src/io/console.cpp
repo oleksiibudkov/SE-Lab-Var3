@@ -1,9 +1,10 @@
 #include "io/console.h"
 
-#include <cmath>
 #include <cstdlib>
 #include <iostream>
-#include <sstream>
+#include <stdexcept>
+
+#include "core/validation.h"
 
 namespace ftc {
 
@@ -27,27 +28,30 @@ void pause() {
     readLine("\n Press Enter to continue...");
 }
 
+// Питає число, доки parseDouble не прийме введений текст
 double readDouble(const std::string& text) {
     while (true) {
         std::string line = readLine(text);
-        std::istringstream in(line);
-        double value;
-        if (in >> value && (in >> std::ws).eof() && std::isfinite(value)) return value;
-        if (line.empty()) std::cout << "  Nothing was entered. ";
-        else std::cout << "  \"" << line << "\" is not a number. ";
-        std::cout << "Please type a number, for example -2 or 0.5 (use a dot, not a comma).\n";
+        try {
+            return parseDouble(line);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "  " << e.what()
+                      << " Please type a number, for example -2 or 0.5 (use a dot, not a comma).\n";
+        }
     }
 }
 
+// Питає номер пункту меню, доки parseInt не прийме введений текст
 int readInt(const std::string& text) {
     while (true) {
         std::string line = readLine(text);
-        std::istringstream in(line);
-        int value;
-        if (in >> value && (in >> std::ws).eof()) return value;
-        if (line.empty()) std::cout << "  Nothing was entered. ";
-        else std::cout << "  \"" << line << "\" is not a menu option. ";
-        std::cout << "Please type a number from 0 to 4.\n";
+        try {
+            return parseInt(line);
+        } catch (const std::invalid_argument&) {
+            if (line.empty()) std::cout << "  Nothing was entered. ";
+            else std::cout << "  \"" << line << "\" is not a menu option. ";
+            std::cout << "Please type a number from 0 to 4.\n";
+        }
     }
 }
 
